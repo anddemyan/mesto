@@ -6,9 +6,8 @@
 
 
 .header {
-  padding-top: 45px;
+  padding: 45px 0;
   border-bottom: 1px solid #545454;
-  height: 74px;
 }
 
 
@@ -137,14 +136,13 @@
   width: 282px;
   height: 361px;
   color: #fff;
-  margin-bottom: 4px;
 }
 
 .elements__image {
   width: 282px;
   height: 282px;
   border-radius: 10px 10px 0 0;
-  margin: 0;
+  margin-bottom: -5px;
 }
 
 .elements__description {
@@ -292,4 +290,121 @@
   padding: 0;
   left: 438px;
   top: -40px;
+}
+
+@media screen and (max-width: 914px) {
+  .main {
+    margin: 0 auto;
+    width: 600px;
+  }
+
+  .elements__list {
+    justify-items: center;
+  }
+  .profile__name {
+    max-width: 220px;
+    font-size: 32px;
+  }
+  .profile__description {
+    font-size: 16px;
+    max-width: 220px;
+  }
+  
+}
+
+@media screen and (max-width: 620px) {
+  .main {
+    width: 282px;
+  }
+  .profile {
+    flex-direction: column;
+    padding: 32px 0 0;
+  }
+  .profile__info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile__bio {
+    justify-content: center;
+    padding: 22px 0 0;
+  }
+  .profile__avatar {
+    margin-right: 0;
+  }
+  .profile__name {
+    margin-left: 28px;
+  }
+  .profile__description {
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .profile__edit-button {
+    margin-bottom: 14px;
+  }
+  .profile__add-button {
+    margin: 36px 0;
+    width: 282px;
+  }
+  .profile__name {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 33px;
+    margin-right: 10px;
+  }
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+  }
+  .popup__container {
+    width: 282px;
+  }
+  .popup__contact-info {
+    width: 238px;
+  }
+  .popup__contact-name {
+    width: 238px;
+  }
+  .popup__contact-job {
+    width: 238px;
+  }
+  .popup__form-save {
+    width: 238px;
+  }
+  .popup__form {
+    padding: 25px 22px;
+  }
+  .popup__title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 75px 0;
+  }
+  .popup__close {
+    width: 20px;
+    height: 20px;
+    top: -36px; 
+    left: 262px;
+    background-size: contain;
+    }
+
+  .footer__copyright {
+    margin: 48px 0 36px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .header {
+    padding: 28px 0;
+  }
+  .mesto {
+    width: 104px;
+    height: 25px;
+  }
 }

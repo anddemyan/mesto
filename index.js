@@ -26,7 +26,9 @@ function saveProfile() {
 function formSubmitHandler (evt) {
   evt.preventDefault(); 
   document.querySelector('.profile__name').textContent = nameInput.value;
-  document.querySelector('.profile__description').textContent = jobInput.value; 
+  document.querySelector('.profile__description').textContent = jobInput.value;
+  
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
+formElement.addEventListener('submit', togglePopup);
