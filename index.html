@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Russia Mesto</title>
+</head>
+<body class="main">
+  <header class="header">
+    <img src="./images/Vector.svg" alt="Место" class="mesto">
+  </header>
+<main>
+  <div>
+  <section class="profile">
+    <div class="profile__info">
+    <img src="./images/Kusto.jpeg" alt="Аватар Профиля" class="profile__avatar">
+    <div class="profile__bio">
+      <h1 class="profile__name">Жак-Ив Кусто</h1>
+      <button class="profile__edit-button"></button>
+      <p class="profile__description">Исследователь океана</p>
+    </div>
+  </div>
+    <button class="profile__add-button"></button>
+  </section>
+  <section class="elements">
+    <ul class="elements__list">
+      <li class="elements__item">
+        <img src="./images/izhevsk.jpeg" alt="Ижевск" class="elements__image">
+        <div class="elements__description">
+          <h2 class="elements__title">Ижевск</h2>
+          <button class="elements__like-button"></button>
+        </div>
+      </li>
+      <li class="elements__item">
+        <img src="./images/ural.jpg" alt="Уральские горы" class="elements__image">
+        <div class="elements__description">
+          <h2 class="elements__title">Уральские горы</h2>
+          <button class="elements__like-button"></button>
+        </div>
+      </li>
+      <li class="elements__item">
+        <img src="./images/altay.jpg" alt="Алтай" class="elements__image">
+        <div class="elements__description">
+          <h2 class="elements__title">Алтай</h2>
+          <button class="elements__like-button"></button>
+        </div>
+      </li>
+      <li class="elements__item">
+        <img src="./images/sakhalin.jpg" alt="Сахалин" class="elements__image">
+        <div class="elements__description">
+          <h2 class="elements__title">Сахалин</h2>
+          <button class="elements__like-button"></button>
+        </div>
+      </li>
+      <li class="elements__item">
+        <img src="./images/baikal.jpg" alt="Байкал" class="elements__image">
+        <div class="elements__description">
+          <h2 class="elements__title">Байкал</h2>
+          <button class="elements__like-button"></button>
+        </div>
+      </li>
+      <li class="elements__item">
+        <img src="./images/kul-sharif.jpg" alt="Кул-Шариф" class="elements__image">
+        <div class="elements__description">
+          <h2 class="elements__title">Кул-Шариф</h2>
+          <button class="elements__like-button"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+  </footer>
+</main>
+<section class="popup">
+  <div class="popup__container">
+    <button class="popup__close"></button>
+    <form class="popup__form">
+      <fieldset class="popup__contact-info">
+        <legend class="popup__title">Редактировать профиль</legend>
+        <input type="text" class="popup__contact-name" value="Имя">
+        <input type="text" class="popup__contact-job" value="">
+        <input type="submit" class="popup__form-save" value="Сохранить">
+      </fieldset>
+    </form>
+  </div>
+  </section>
+<script src="./pages/index.js"></script>
+</body>
+</html>
