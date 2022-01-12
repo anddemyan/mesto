@@ -7,16 +7,21 @@
   background-image: url(../../../images/close_Icon.svg);
   background-repeat: no-repeat;
   padding: 0;
-  left: 438px;
+  right: -40px;
   top: -40px;
+  cursor: pointer;
+}
+
+.popup__close:hover {
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 620px) {
   .popup__close {
     width: 20px;
     height: 20px;
-    top: -36px;
-    left: 262px;
+    top: -36px; 
+    right: 0;
     background-size: contain;
   }
 }

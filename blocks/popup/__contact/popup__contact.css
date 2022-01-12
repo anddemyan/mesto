@@ -1,8 +1,8 @@
-.popup__contact-job {
+.popup__contact {
   width: 358px;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 48px;
+  margin-bottom: 30px;
   outline: none;
   padding-bottom: 13px;
   font-family: 'Inter', Arial, sans-serif;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 620px) {
-  .popup__contact-job {
+  .popup__contact {
     width: 238px;
   }
 }

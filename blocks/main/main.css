@@ -2,11 +2,11 @@
   max-width: 880px;
   margin: 0 auto;
   background-color: #000000;
+  min-width: 320px;
 }
 
 @media screen and (max-width: 914px) {
   .main {
-    margin: 0 auto;
     width: 600px;
   }
 }
