@@ -4,8 +4,8 @@ const popup = document.querySelector('.popup');
 let profileName = document.querySelector('.profile__name')
 let profileDescription = document.querySelector('.profile__description');
 let formElement = document.querySelector('.popup__form');
-let nameInput = document.querySelector('.popup__contact_name');
-let jobInput = document.querySelector('.popup__contact_job');
+let nameInput = document.querySelector('.popup__field_contact_name');
+let jobInput = document.querySelector('.popup__field_contact_job');
 
 //Функция открытия попапа с записью значений со страницы в поля формы
 function openPopup() {

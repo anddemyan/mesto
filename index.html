@@ -19,7 +19,7 @@
         <img src="./images/Kusto.jpeg" alt="Аватар Профиля" class="profile__avatar">
         <div class="profile__bio">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button type="button" class="profile__edit-button"></button>
+          <button type="button" class="profile__edit-button" aria-label="Редактировать"></button>
           <p class="profile__description">Исследователь океана</p>
         </div>
       </div>
@@ -38,35 +38,35 @@
           <img src="./images/ural.jpg" alt="Уральские горы" class="elements__image">
           <div class="elements__description">
             <h2 class="elements__title">Уральские горы</h2>
-            <button class="elements__like-button"></button>
+            <button type="button" class="elements__like-button"></button>
           </div>
         </li>
         <li class="elements__item">
           <img src="./images/altay.jpg" alt="Алтай" class="elements__image">
           <div class="elements__description">
             <h2 class="elements__title">Алтай</h2>
-            <button class="elements__like-button"></button>
+            <button type="button" class="elements__like-button"></button>
           </div>
         </li>
         <li class="elements__item">
           <img src="./images/sakhalin.jpg" alt="Сахалин" class="elements__image">
           <div class="elements__description">
             <h2 class="elements__title">Сахалин</h2>
-            <button class="elements__like-button"></button>
+            <button type="button" class="elements__like-button"></button>
           </div>
         </li>
         <li class="elements__item">
           <img src="./images/baikal.jpg" alt="Байкал" class="elements__image">
           <div class="elements__description">
             <h2 class="elements__title">Байкал</h2>
-            <button class="elements__like-button"></button>
+            <button type="button" class="elements__like-button"></button>
           </div>
         </li>
         <li class="elements__item">
           <img src="./images/kul-sharif.jpg" alt="Кул-Шариф" class="elements__image">
           <div class="elements__description">
             <h2 class="elements__title">Кул-Шариф</h2>
-            <button class="elements__like-button"></button>
+            <button type="button" class="elements__like-button"></button>
           </div>
         </li>
       </ul>
@@ -81,8 +81,8 @@
       <form name="ProfileEdit" class="popup__form">
         <fieldset class="popup__contact-info">
           <legend class="popup__title">Редактировать профиль</legend>
-          <input type="text" class="popup__contact popup__contact_name" value="Имя">
-          <input type="text" class="popup__contact popup__contact_job" value="Профессия">
+          <input type="text" class="popup__field popup__field_contact_name" value="Имя">
+          <input type="text" class="popup__field popup__field_contact_job" value="Профессия">
           <input type="submit" class="popup__form-save" value="Сохранить">
         </fieldset>
       </form>
