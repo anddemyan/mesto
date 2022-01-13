@@ -9,6 +9,6 @@
 @media screen and (max-width: 620px) {
   .profile__bio {
     justify-content: center;
-    padding: 22px 0 0;
+    padding: 25px 0 0;
   }
 }
