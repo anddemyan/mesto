@@ -24,9 +24,12 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-const popupOpenButton = document.querySelector('.profile__edit-button');
-const popupCloseButton = document.querySelector('.popup__close');
-const popup = document.querySelector('.popup');
+const popupEdit = document.querySelector('.popup_type_edit');
+const popupAdd = document.querySelector('.popup_type_add');
+const popupEditOpenButton = document.querySelector('.profile__edit-button');
+const popupAddOpenButton = document.querySelector('.profile__add-button');
+const popupEditCloseButton = popupEdit.querySelector('.popup__close');
+const popupAddCloseButton = popupAdd.querySelector('.popup__close');
 let profileName = document.querySelector('.profile__name')
 let profileDescription = document.querySelector('.profile__description');
 let formElement = document.querySelector('.popup__form');
@@ -36,15 +39,24 @@ const cardList = document.querySelector('.elements__list');
 const cardTemplate = document.querySelector('.card-template').content;
 
 //Функция открытия попапа с записью значений со страницы в поля формы
-function openPopup() {
-  popup.classList.add('popup_opened');
+function openPopupEdit() {
+  popupEdit.classList.add('popup_opened');
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
 }
 
+//открытие попапа add
+function openPopupAdd() {
+  popupAdd.classList.add('popup_opened');
+}
+
 //функция закрытия попапа
-function closePopup() {
-  popup.classList.remove('popup_opened');
+function closeEditPopup() {
+  popupEdit.classList.remove('popup_opened');
+}
+
+function closeAddPopup() {
+  popupAdd.classList.remove('popup_opened');
 }
 
 //Функция отправки формы
@@ -69,5 +81,7 @@ initialCards.forEach(function(cardData){
 });
 
 formElement.addEventListener('submit', formSubmitHandler); 
-popupOpenButton.addEventListener('click', openPopup);
-popupCloseButton.addEventListener('click', closePopup);
+popupEditOpenButton.addEventListener('click', openPopupEdit);
+popupAddOpenButton.addEventListener('click', openPopupAdd);
+popupEditCloseButton.addEventListener('click', closeEditPopup);
+popupAddCloseButton.addEventListener('click', closeAddPopup);
