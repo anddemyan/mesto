@@ -32,11 +32,14 @@ const popupEditCloseButton = popupEdit.querySelector('.popup__close');
 const popupAddCloseButton = popupAdd.querySelector('.popup__close');
 let profileName = document.querySelector('.profile__name')
 let profileDescription = document.querySelector('.profile__description');
-let formElement = document.querySelector('.popup__form');
+let popupEditSaveButton = popupEdit.querySelector('.popup__form');
+let popupAddSaveButton = popupAdd.querySelector('.popup__form');
 let nameInput = document.querySelector('.popup__field_contact_name');
 let jobInput = document.querySelector('.popup__field_contact_job');
 const cardList = document.querySelector('.elements__list');
 const cardTemplate = document.querySelector('.card-template').content;
+const inputName = document.querySelector('.popup__field_name');
+const inputLink = document.querySelector('.popup__field_link');
 
 //Функция открытия попапа с записью значений со страницы в поля формы
 function openPopupEdit() {
@@ -64,11 +67,20 @@ function formSubmitHandler (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileDescription.textContent = jobInput.value;
-    closePopup();
+    closeEditPopup();
+}
+
+function addCard (evt) {
+  evt.preventDefault();
+    createCard({
+    name: inputName.value,
+    link: inputLink.value
+  })
+  closeAddPopup();
 }
 
 //Функция создания карточек из template
-initialCards.forEach(function(cardData){
+function createCard (cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector('.elements__image');
   const cardTitle = cardElement.querySelector('.elements__title');
@@ -78,9 +90,12 @@ initialCards.forEach(function(cardData){
   cardImage.src = cardData.link;
   
   cardList.prepend(cardElement);
-});
+}
 
-formElement.addEventListener('submit', formSubmitHandler); 
+initialCards.forEach(createCard);
+
+popupEditSaveButton.addEventListener('submit', formSubmitHandler); 
+popupAddSaveButton.addEventListener('submit', addCard); 
 popupEditOpenButton.addEventListener('click', openPopupEdit);
 popupAddOpenButton.addEventListener('click', openPopupAdd);
 popupEditCloseButton.addEventListener('click', closeEditPopup);
