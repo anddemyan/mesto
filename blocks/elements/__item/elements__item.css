@@ -1,4 +1,5 @@
 .elements__item {
   width: 282px;
   color: #fff;
+  position: relative;
 }

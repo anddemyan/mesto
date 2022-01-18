@@ -62,6 +62,7 @@ function closeAddPopup() {
   popupAdd.classList.remove('popup_opened');
 }
 
+
 //Функция отправки формы
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -84,11 +85,24 @@ function createCard (cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector('.elements__image');
   const cardTitle = cardElement.querySelector('.elements__title');
-
+  const deleteButton = cardElement.querySelector('.elements__delete-button');
+  const cardItem = cardElement.querySelector('.elements__item')
+  const likeButton = cardElement.querySelector('.elements__like-button');
   cardTitle.textContent = cardData.name;
   cardImage.alt = cardData.name;
   cardImage.src = cardData.link;
-  
+
+
+  function deleteCard(evt) {
+    cardItem.remove();
+  }
+
+  function addLike() {
+    likeButton.classList.toggle('elements__like-button_active');
+  }
+
+  deleteButton.addEventListener('click', deleteCard);
+  likeButton.addEventListener('click', addLike);
   cardList.prepend(cardElement);
 }
 

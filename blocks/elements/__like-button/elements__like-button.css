@@ -6,6 +6,7 @@
   background-image: url('../../../images/like_button.svg');
   background-repeat: no-repeat;
   padding: 0;
+  cursor: pointer;
 }
 
 .elements__like-button:hover {
