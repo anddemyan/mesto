@@ -45,8 +45,6 @@ const inputLink = document.querySelector('.popup__field_link');
 const imagePopupSrc = document.querySelector('.popup-image__photo');
 const imagePopupCaption = document.querySelector('.popup-image__caption');
 
-
-
 //Функция открытия попапа с записью значений со страницы в поля формы
 function openPopupEdit() {
   popupEdit.classList.add('popup_opened');
@@ -68,7 +66,6 @@ function closeImagePopup() {
   popupImage.classList.remove('popup_opened');
 }
 
-
 //Функция отправки формы
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -86,8 +83,6 @@ function addCard (evt) {
   togglePopupAdd();
 }
 
-
-
 //Функция создания карточек из template
 function createCard (cardData) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -100,7 +95,6 @@ function createCard (cardData) {
   cardImage.alt = cardData.name;
   cardImage.src = cardData.link;
 
-  
   //заполнение попапа с картинкой данными и открытие попапа
   function imagePopup() {
     imagePopupSrc.src = cardData.link;
