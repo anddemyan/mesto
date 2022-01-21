@@ -32,12 +32,12 @@ const popupAddOpenButton = document.querySelector('.profile__add-button');
 const popupEditCloseButton = popupEdit.querySelector('.popup__close');
 const popupAddCloseButton = popupAdd.querySelector('.popup__close');
 const popupImageCloseButton = popupImage.querySelector('.popup__close');
-let profileName = document.querySelector('.profile__name')
-let profileDescription = document.querySelector('.profile__description');
-let popupEditSaveButton = popupEdit.querySelector('.popup__form');
-let popupAddSaveButton = popupAdd.querySelector('.popup__form');
-let nameInput = document.querySelector('.popup__field_contact_name');
-let jobInput = document.querySelector('.popup__field_contact_job');
+const profileName = document.querySelector('.profile__name')
+const profileDescription = document.querySelector('.profile__description');
+const profilePopupForm = popupEdit.querySelector('.popup__form');
+const addPopupForm = popupAdd.querySelector('.popup__form');
+const nameInput = document.querySelector('.popup__field_contact_name');
+const jobInput = document.querySelector('.popup__field_contact_job');
 const cardList = document.querySelector('.elements__list');
 const cardTemplate = document.querySelector('.card-template').content;
 const inputName = document.querySelector('.popup__field_name');
@@ -45,33 +45,28 @@ const inputLink = document.querySelector('.popup__field_link');
 const imagePopupSrc = document.querySelector('.popup-image__photo');
 const imagePopupCaption = document.querySelector('.popup-image__caption');
 
+//открытие попапов
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+}
+//закрытие попапов
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
+
 //Функция открытия попапа с записью значений со страницы в поля формы
 function openPopupEdit() {
-  popupEdit.classList.add('popup_opened');
+  openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
 }
 
-//закрытие попапа edit
-function closeEditPopup() {
-  popupEdit.classList.remove('popup_opened');
-}
-
-//открытие, закрытие попапа add
-function togglePopupAdd() {
-  popupAdd.classList.toggle('popup_opened');
-}
-
-function closeImagePopup() {
-  popupImage.classList.remove('popup_opened');
-}
-
 //Функция отправки формы
-function formSubmitHandler (evt) {
+function submitProfileForm (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileDescription.textContent = jobInput.value;
-    closeEditPopup();
+    closePopup(popupEdit);
 }
 
 function addCard (evt) {
@@ -80,7 +75,8 @@ function addCard (evt) {
     name: inputName.value,
     link: inputLink.value
   })
-  togglePopupAdd();
+  closePopup(popupAdd);
+  cardAdd.reset();
 }
 
 //Функция создания карточек из template
@@ -100,7 +96,7 @@ function createCard (cardData) {
     imagePopupSrc.src = cardData.link;
     imagePopupSrc.alt = cardData.name;
     imagePopupCaption.textContent = cardData.name;
-    popupImage.classList.add('popup_opened');
+    openPopup(popupImage);
   }
 
   //удаление карточки
@@ -122,10 +118,10 @@ function createCard (cardData) {
 
 initialCards.forEach(createCard);
 
-popupEditSaveButton.addEventListener('submit', formSubmitHandler); 
-popupAddSaveButton.addEventListener('submit', addCard); 
+profilePopupForm.addEventListener('submit', submitProfileForm); 
+addPopupForm.addEventListener('submit', addCard); 
 popupEditOpenButton.addEventListener('click', openPopupEdit);
-popupAddOpenButton.addEventListener('click', togglePopupAdd);
-popupEditCloseButton.addEventListener('click', closeEditPopup);
-popupAddCloseButton.addEventListener('click', togglePopupAdd);
-popupImageCloseButton.addEventListener('click', closeImagePopup);
+popupAddOpenButton.addEventListener('click', () => openPopup(popupAdd));
+popupEditCloseButton.addEventListener('click', () => closePopup(popupEdit));
+popupAddCloseButton.addEventListener('click', () => closePopup(popupAdd));
+popupImageCloseButton.addEventListener('click', () => closePopup(popupImage));
