@@ -71,7 +71,7 @@ function submitProfileForm (evt) {
 
 function addCard (evt) {
   evt.preventDefault();
-    createCard({
+    renderCard({
     name: inputName.value,
     link: inputLink.value
   })
@@ -104,7 +104,7 @@ function createCard (cardData) {
     cardItem.remove();
   }
 
-  // кнопка лайк
+  //кнопка лайк
   function addLike() {
     likeButton.classList.toggle('elements__like-button_active');
   }
@@ -112,11 +112,16 @@ function createCard (cardData) {
   cardImage.addEventListener('click', imagePopup);
   deleteButton.addEventListener('click', deleteCard);
   likeButton.addEventListener('click', addLike);
-  
+  return cardElement;
+}
+
+function renderCard(cardData) {
+  const cardElement = createCard(cardData);
   cardList.prepend(cardElement);
 }
 
-initialCards.forEach(createCard);
+initialCards.forEach(renderCard);
+
 
 profilePopupForm.addEventListener('submit', submitProfileForm); 
 addPopupForm.addEventListener('submit', addCard); 
