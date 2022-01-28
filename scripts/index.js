@@ -45,6 +45,7 @@ const inputLink = document.querySelector('.popup__field_link');
 const imagePopupSrc = document.querySelector('.popup-image__photo');
 const imagePopupCaption = document.querySelector('.popup-image__caption');
 
+
 //открытие попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -53,6 +54,7 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
+
 
 //Функция открытия попапа с записью значений со страницы в поля формы
 function openPopupEdit() {

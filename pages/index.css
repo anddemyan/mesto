@@ -33,3 +33,29 @@
 @import url("../blocks/profile/__edit-button/profile__edit-button.css");
 @import url("../blocks/profile/__info/profile__info.css");
 @import url("../blocks/profile/__name/profile__name.css");
+
+.popup__field_type_error {
+  border-color: #ff3333;
+}
+
+.input-container__invalid .error-message {
+  padding: 10px;
+  opacity: 1;
+}
+
+.input-container__invalid .input__text {
+  border-color: #FF3333;
+}
+
+.error-message {
+  opacity: 0;
+}
+
+.error-message_visible {
+  padding: 10px;
+  opacity: 1;
+}
+
+.popup__form-save_disabled {
+  background-color: tomato;
+}
