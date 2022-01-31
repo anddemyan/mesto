@@ -48,10 +48,10 @@ const objToggleButton = {
   inactiveButtonClass: 'popup__form-save_disabled',
   submitButtonSelector: '.popup__form-save'
 }
-const errorMessage = profilePopupForm.querySelectorAll('.error-message, .popup__field');
+const errorMessage = profilePopupForm.querySelectorAll('.popup__error-message, .popup__field');
 const errorField = profilePopupForm.querySelectorAll('.popup__field');
 
-function hideErrors (errorMessage, errorField) {
+function hideErrors (errorMessage) {
    errorMessage.classList.remove('error-message_visible');
    errorMessage.textContent = '';
    errorMessage.classList.remove('popup__field_type_error');
@@ -60,12 +60,12 @@ function hideErrors (errorMessage, errorField) {
 //открытие попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  errorMessage.forEach(hideErrors);
-  // popupErrorField.forEach(hideError);
+  document.addEventListener('keydown', closePopupEsc);
 }
 //закрытие попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
 }
 
 
@@ -75,7 +75,7 @@ function openPopupEdit() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
   toggleButton(profilePopupForm, objToggleButton);
-
+  errorMessage.forEach(hideErrors);
 }
 
 //Функция отправки формы
@@ -154,10 +154,10 @@ function closePopupEsc () {
   }
 }
 
-document.addEventListener('keydown', closePopupEsc);
-popupEdit.addEventListener('click', closePopupOverlay);
-popupAdd.addEventListener('click', closePopupOverlay);
-popupImage.addEventListener('click', closePopupOverlay);
+
+popupEdit.addEventListener('mousedown', closePopupOverlay);
+popupAdd.addEventListener('mousedown', closePopupOverlay);
+popupImage.addEventListener('mousedown', closePopupOverlay);
 profilePopupForm.addEventListener('submit', submitProfileForm); 
 addPopupForm.addEventListener('submit', addCard); 
 popupEditOpenButton.addEventListener('click', openPopupEdit);
