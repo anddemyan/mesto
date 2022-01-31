@@ -29,35 +29,43 @@
       <ul class="elements__list">
       </ul>
     </section>
-   </main>
-   <footer class="footer">
+  </main>
+  <footer class="footer">
     <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
-   </footer>
+  </footer>
   <div class="popup popup_type_edit">
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
-      <form name="ProfileEdit" class="popup__form">
+      <form id="profileEdit" name="profileEdit" class="popup__form" novalidate>
         <fieldset class="popup__contact-info">
           <legend class="popup__title">Редактировать профиль</legend>
-          <input type="text" class="popup__field popup__field_contact_name" value="Имя">
-          <input type="text" class="popup__field popup__field_contact_job" value="Профессия">
-          <input type="submit" class="popup__form-save" value="Сохранить">
+          <input id="name" name="name" type="text" class="popup__field popup__field_contact_name" value="Имя" required
+            minlength="2" maxlength="40">
+          <span id="error-name" class="popup__field__error-message popup__field__error-message_visible"></span>
+          <input id="job" name="job" type="text" class="popup__field popup__field_contact_job" value="Профессия"
+            required minlength="2" maxlength="200">
+          <span id="error-job" class="popup__field__error-message popup__field__error-message_visible"></span>
+          <button type="submit" class="popup__form-save" value="Сохранить">Сохранить</button>
         </fieldset>
       </form>
     </div>
   </div>
   <div class="popup popup_type_add">
     <div class="popup__container">
-      <button type="button" class="popup__close"></button>
-      <form name="cardAdd" class="popup__form">
-        <fieldset class="popup__contact-info">
-          <legend class="popup__title">Новое место</legend>
-          <input type="text" class="popup__field popup__field_name" placeholder="Название">
-          <input type="text" class="popup__field popup__field_link" placeholder="Ссылка на картинку">
-          <input type="submit" class="popup__form-save" value="Создать">
-        </fieldset>
-      </form>
-    </div>
+    <button type="button" class="popup__close"></button>
+    <form id="cardAdd" name="cardAdd" class="popup__form" novalidate>
+      <fieldset class="popup__contact-info">
+        <legend class="popup__title">Новое место</legend>
+        <input id="title" name="title" type="text" class="popup__field popup__field_name" placeholder="Название"
+          required minlength="2" maxlength="30">
+        <span id="error-title" class="popup__field__error-message popup__field__error-message_visible"></span>
+        <input id="url" name="url" type="url" class="popup__field popup__field_link" placeholder="Ссылка на картинку"
+          required>
+        <span id="error-url" class="popup__field__error-message popup__field__error-message_visible"></span>
+        <button type="submit" class="popup__form-save" value="Создать">Создать</button>
+      </fieldset>
+    </form>
+  </div>
   </div>
   <div class="popup popup_type_image">
     <div class="popup__container">
@@ -78,6 +86,7 @@
       </div>
     </li>
   </template>
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 
