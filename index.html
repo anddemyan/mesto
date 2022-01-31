@@ -41,11 +41,11 @@
           <legend class="popup__title">Редактировать профиль</legend>
           <input id="name" name="name" type="text" class="popup__field popup__field_contact_name" value="Имя" required
             minlength="2" maxlength="40">
-          <span id="error-name" class="error-message error-message_visible"></span>
+          <span id="error-name" class="popup__field__error-message popup__field__error-message_visible"></span>
           <input id="job" name="job" type="text" class="popup__field popup__field_contact_job" value="Профессия"
             required minlength="2" maxlength="200">
-          <span id="error-job" class="error-message error-message_visible"></span>
-          <input type="submit" class="popup__form-save" value="Сохранить">
+          <span id="error-job" class="popup__field__error-message popup__field__error-message_visible"></span>
+          <button type="submit" class="popup__form-save" value="Сохранить">Сохранить</button>
         </fieldset>
       </form>
     </div>
@@ -58,11 +58,11 @@
         <legend class="popup__title">Новое место</legend>
         <input id="title" name="title" type="text" class="popup__field popup__field_name" placeholder="Название"
           required minlength="2" maxlength="30">
-        <span id="error-title" class="error-message error-message_visible"></span>
+        <span id="error-title" class="popup__field__error-message popup__field__error-message_visible"></span>
         <input id="url" name="url" type="url" class="popup__field popup__field_link" placeholder="Ссылка на картинку"
           required>
-        <span id="error-url" class="error-message error-message_visible"></span>
-        <input type="submit" class="popup__form-save" value="Создать">
+        <span id="error-url" class="popup__field__error-message popup__field__error-message_visible"></span>
+        <button type="submit" class="popup__form-save" value="Создать">Создать</button>
       </fieldset>
     </form>
   </div>

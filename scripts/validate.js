@@ -63,11 +63,3 @@ enableValidation({
   inactiveButtonClass: 'popup__form-save_disabled',
   submitButtonSelector: '.popup__form-save'
 })
-// enableValidation({
-//   formSelector: '.popup__form',
-//   inputSelector: '.popup__field',
-//   submitButtonSelector: '.popup__form-save',
-//   inactiveButtonClass: 'popup__button_disabled',
-//   inputErrorClass: 'popup__input_type_error',
-//   errorClass: 'popup__error_visible'
-// }); 

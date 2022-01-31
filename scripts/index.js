@@ -44,11 +44,24 @@ const inputName = document.querySelector('.popup__field_name');
 const inputLink = document.querySelector('.popup__field_link');
 const imagePopupSrc = document.querySelector('.popup-image__photo');
 const imagePopupCaption = document.querySelector('.popup-image__caption');
+const objToggleButton = {
+  inactiveButtonClass: 'popup__form-save_disabled',
+  submitButtonSelector: '.popup__form-save'
+}
+const errorMessage = profilePopupForm.querySelectorAll('.error-message, .popup__field');
+const errorField = profilePopupForm.querySelectorAll('.popup__field');
 
+function hideErrors (errorMessage, errorField) {
+   errorMessage.classList.remove('error-message_visible');
+   errorMessage.textContent = '';
+   errorMessage.classList.remove('popup__field_type_error');
+}
 
 //открытие попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  errorMessage.forEach(hideErrors);
+  // popupErrorField.forEach(hideError);
 }
 //закрытие попапов
 function closePopup(popup) {
@@ -61,6 +74,8 @@ function openPopupEdit() {
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
+  toggleButton(profilePopupForm, objToggleButton);
+
 }
 
 //Функция отправки формы
@@ -79,6 +94,7 @@ function addCard (evt) {
   })
   closePopup(popupAdd);
   cardAdd.reset();
+  toggleButton(addPopupForm, objToggleButton);
 }
 
 //Функция создания карточек из template
@@ -125,6 +141,23 @@ function renderCard(cardData) {
 initialCards.forEach(renderCard);
 
 
+function closePopupOverlay() {
+  if (event.currentTarget === event.target) {
+    closePopup(event.currentTarget);
+  }
+}
+
+function closePopupEsc () {
+  if (event.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+}
+
+document.addEventListener('keydown', closePopupEsc);
+popupEdit.addEventListener('click', closePopupOverlay);
+popupAdd.addEventListener('click', closePopupOverlay);
+popupImage.addEventListener('click', closePopupOverlay);
 profilePopupForm.addEventListener('submit', submitProfileForm); 
 addPopupForm.addEventListener('submit', addCard); 
 popupEditOpenButton.addEventListener('click', openPopupEdit);

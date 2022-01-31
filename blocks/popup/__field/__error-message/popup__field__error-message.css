@@ -1,0 +1,9 @@
+.input-container__invalid .popup__field__error-message {
+  opacity: 1;
+}
+
+.popup__field__error-message {
+  opacity: 0;
+  height: 22px;
+  margin: 5px 0;
+}
