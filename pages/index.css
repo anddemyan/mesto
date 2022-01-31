@@ -34,6 +34,6 @@
 @import url("../blocks/profile/__info/profile__info.css");
 @import url("../blocks/profile/__name/profile__name.css");
 @import url("../blocks/popup/__field/popup__field.css");
-@import url("../blocks/popup/__field/__error-message/popup__field__error-message.css");
-@import url("../blocks/popup/__field/__error-message/_visible/popup__field__error-message_visible.css");
+@import url("../blocks/popup/__error-message/popup__error-message.css");
+@import url("../blocks/popup/__error-message/_visible/popup__error-message_visible.css");
 @import url("../blocks/popup/__form-save/_disabled/popup__form-save_disabled.css");
