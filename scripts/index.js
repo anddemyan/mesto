@@ -40,6 +40,7 @@ const config = {
 }
 
 const popupEdit = document.querySelector('.popup_type_edit');
+const profilePopupForm = popupEdit.querySelector('.popup__form');
 const popupAdd = document.querySelector('.popup_type_add');
 const popupEditOpenButton = document.querySelector('.profile__edit-button');
 const popupAddOpenButton = document.querySelector('.profile__add-button');
@@ -48,21 +49,19 @@ const popupAddCloseButton = popupAdd.querySelector('.popup__close');
 const popupImageCloseButton = popupImage.querySelector('.popup__close');
 const profileName = document.querySelector('.profile__name')
 const profileDescription = document.querySelector('.profile__description');
-const profilePopupForm = popupEdit.querySelector('.popup__form');
 const addPopupForm = popupAdd.querySelector('.popup__form');
 const nameInput = document.querySelector('.popup__field_contact_name');
 const jobInput = document.querySelector('.popup__field_contact_job');
 const cardList = document.querySelector('.elements__list');
 const inputName = document.querySelector('.popup__field_name');
 const inputLink = document.querySelector('.popup__field_link');
-const errorMessage = profilePopupForm.querySelectorAll('.popup__error-message, .popup__field');
 
 const editFormValidator = new FormValidator(config, profilePopupForm)
 const addCardForm = new FormValidator(config, addPopupForm)
 editFormValidator.enableValidation()
 addCardForm.enableValidation()
 
-const cardTemplateSelector = document.querySelector('.card-template')
+const cardTemplateSelector = '.card-template'
 
 
 function renderCard(initialCards) {
@@ -73,22 +72,12 @@ function renderCard(initialCards) {
 
 initialCards.forEach(renderCard);
 
-
-
-function hideErrors (errorMessage) {
-   errorMessage.classList.remove('error-message_visible');
-   errorMessage.textContent = '';
-   errorMessage.classList.remove('popup__field_type_error');
-}
-
-
 //Функция открытия попапа с записью значений со страницы в поля формы
 function openPopupEdit() {
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
   editFormValidator.toggleButton();
-  errorMessage.forEach(hideErrors);
 }
 
 //Функция отправки формы

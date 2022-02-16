@@ -3,7 +3,7 @@ import { popupImage, openPopup, imagePopupSrc, imagePopupCaption} from './utils.
 export class Card {
   constructor(data, cardTemplateSelector) {
     this._data = data
-    this._template = cardTemplateSelector.content
+    this._cardTemplateSelector = cardTemplateSelector
   }
 
   _setEventListeners() {
@@ -32,7 +32,7 @@ export class Card {
 
   //Функция создания карточек из template
   createCard () {
-    const cardElement = this._template.cloneNode(true);
+    const cardElement = document.querySelector(this._cardTemplateSelector).content.cloneNode(true);
     this._cardImage = cardElement.querySelector('.elements__image');
     const cardTitle = cardElement.querySelector('.elements__title');
     this._deleteButton = cardElement.querySelector('.elements__delete-button');

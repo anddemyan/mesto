@@ -20,11 +20,17 @@ export class FormValidator {
     errorContainer.textContent = '';
   }
 
+  _hideErrors () {
+    const errorMessage = this._form.querySelectorAll('.popup__error-message, .popup__field');
+    errorMessage.classList.remove('error-message_visible');
+    errorMessage.textContent = '';
+    errorMessage.classList.remove('popup__field_type_error');
+ }
   _validateInput(input) {
     const errorContainer = this._form.querySelector(`#error-${input.id}`);
-  
     if (input.validity.valid) {
       this._hideError(input, errorContainer);
+      this._hideErrors;
     } else {
       this._showError(input, errorContainer);
     }

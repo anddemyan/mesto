@@ -1,3 +1,4 @@
+export const popupEdit = document.querySelector('.popup_type_edit');
 export const imagePopupSrc = document.querySelector('.popup-image__photo');
 export const imagePopupCaption = document.querySelector('.popup-image__caption');
 export const popupImage = document.querySelector('.popup_type_image');
