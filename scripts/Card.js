@@ -6,6 +6,14 @@ export class Card {
     this._cardTemplateSelector = cardTemplateSelector
   }
 
+  _getTemplate () {
+    const cardElement = document
+    .querySelector(this._cardTemplateSelector)
+    .content
+    .cloneNode(true)
+    return cardElement;    
+  }
+
   _setEventListeners() {
     this._cardImage.addEventListener('click', this._imagePopup);
     this._deleteButton.addEventListener('click', this._deleteCard);
@@ -32,17 +40,17 @@ export class Card {
 
   //Функция создания карточек из template
   createCard () {
-    const cardElement = document.querySelector(this._cardTemplateSelector).content.cloneNode(true);
-    this._cardImage = cardElement.querySelector('.elements__image');
-    const cardTitle = cardElement.querySelector('.elements__title');
-    this._deleteButton = cardElement.querySelector('.elements__delete-button');
-    this._cardItem = cardElement.querySelector('.elements__item')
-    this._likeButton = cardElement.querySelector('.elements__like-button');
+    this._element = this._getTemplate();
+    this._cardImage = this._element.querySelector('.elements__image');
+    const cardTitle = this._element.querySelector('.elements__title');
+    this._deleteButton = this._element.querySelector('.elements__delete-button');
+    this._cardItem = this._element.querySelector('.elements__item')
+    this._likeButton = this._element.querySelector('.elements__like-button');
     cardTitle.textContent = this._data.name;
     this._cardImage.alt = this._data.name;
     this._cardImage.src = this._data.link;
 
     this._setEventListeners()
-    return cardElement;
+    return this._element;
   }
 }
